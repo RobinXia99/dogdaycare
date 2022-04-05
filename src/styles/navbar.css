@@ -2,13 +2,13 @@
     font-family: 'Avenir Medium';
 }
 
-.navbar-holder {
+.navbar_holder {
     height: 5rem;
     width: 100%;
     background-color: transparent;
 }
 
-.navbar-web {
+.navbar_web {
     width: 100%;
     height: 5rem;
     background-color: white;
@@ -20,7 +20,7 @@
     z-index: 1000;
 }
 
-.navbar-web ul {
+.navbar_web ul {
     display: flex;
     margin: 0 auto;
     list-style: none;
@@ -29,7 +29,7 @@
 }
 
 
-.navbar-web ul li {
+.navbar_web ul li {
     height: 100%;
     display: flex;
     justify-content: center;
@@ -40,8 +40,8 @@
     cursor: pointer;
 }
 
-.navbar-web ul li:hover {
-    color: #80DCE8;
+.navbar_web ul li:not(:first-child):hover {
+    border-top: 3px solid #3B3B3B;
     
 }
 
@@ -50,10 +50,36 @@
     border-top: 3px solid #80DCE8 !important;
 }
 
-.app-logo {
+.app_logo {
     width: auto;
     height: 65%;
     text-decoration: underline;
     margin-bottom: 5px;
+}
 
+.show_nav {
+    animation: fadeIn 0.5s;
+}
+
+.hide_nav {
+    opacity: 0;
+    animation: fadeOut 0.4s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }

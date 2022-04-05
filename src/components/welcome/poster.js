@@ -4,10 +4,18 @@ import '../../styles/welcome.css';
 const Poster = () => {
 
     return (
-        <div id="dog-poster">
-            <aside className="poster-notice">New outdoor pool!</aside>
-            <h1 className="poster-title">Every Dog deserves a vacation!</h1>
-            <aside className="poster-find-us">- Where to find us -</aside>
+        <div id="dog_poster">
+            <h1 className="poster_title">EVERY DOG NEEDS A<br></br>
+            <span>V</span>
+            <span>A</span>
+            <span>C</span>
+            <span>A</span>
+            <span>T</span>
+            <span>I</span>
+            <span>O</span>
+            <span>N</span>
+            </h1>
+            <aside>! - RENOVATING - Re-Opening 18 April - !</aside>
         </div>
     )
 
