@@ -1,0 +1,119 @@
+.new_dogs_container {
+    background-color: #E6E6E6;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+}
+
+.new_dogs_title {
+    font-size: 2.5rem;
+    color: #80DCE8;
+    text-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    text-align: start;
+    margin: 0 25px;
+    margin-top: 25px;
+}
+
+.dog_image_holder {
+    height: 450px;
+    width: 450px;
+    border: 5px solid #8FDDE7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dog_image_outer_holder {
+    height: 490px;
+    width: 490px;
+    border: 5px solid #EB70B7;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.slides_container {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6vh
+}
+
+.swiper_holder {
+    width: 500px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dog_image {
+    height: 400px;
+    width: 400px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    object-fit: cover;
+    border: 2px solid white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.woof {
+    font-size: 2.5rem;
+    font-family: 'Noteworthy';
+    font-weight: lighter;
+    position: fixed;
+    transform: rotate(45deg);
+    margin-bottom: 410px;
+    margin-left: 410px;
+    color: #262626;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+.dog_tag_container {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin-top: 330px;
+}
+
+.dog_tag_container article {
+    width: 10rem;
+    height: 2.5rem;
+    background-color: #1d1d1d;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+.dog_tag_container article h3 {
+    font-family: 'Futura';
+    font-weight: lighter;
+    margin-left: 5px;
+    color: white;
+}
+
+.slide_button {
+    background-color: white;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    width: 6rem;
+    height: 6rem;
+    border-radius: 10px;
+    font-size: 3rem;
+    line-height: 6rem;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.slide_button:hover {
+    background-color: rgb(248, 248, 248);
+    transform: scale(1.02);
+}

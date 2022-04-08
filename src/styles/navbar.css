@@ -59,11 +59,12 @@
 
 .show_nav {
     animation: fadeIn 0.5s;
+    display: inline;
 }
 
 .hide_nav {
     opacity: 0;
-    animation: fadeOut 0.4s;
+    display: none;
 }
 
 @keyframes fadeIn {
@@ -72,14 +73,5 @@
     }
     100% {
         opacity: 1;
-    }
-}
-
-@keyframes fadeOut {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
     }
 }
