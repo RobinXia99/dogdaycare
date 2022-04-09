@@ -1,21 +1,29 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Owner from './classes/owner';
+import Owner from './models/owner';
 import NavigationBar from './components/universal/navbar';
 import DaycareInfo from './components/welcome/aboutus';
 import NewDogs from './components/welcome/newdogs';
 import Poster from './components/welcome/poster';
+import { fetchData, getDogs } from './models/storagemodel';
 
 function App() {
 
+
+  const [dogs, setDogs] = useState([]);
+
   useEffect(() => {
 
-    let owner = new Owner('Robin','Xia','073613125',['1','2','3']);
+    fetchData();
 
-    console.log(owner);
+    setDogs(getDogs);
 
   },[]);
+
+  useEffect(() => {
+    
+  },[dogs])
 
 
 
@@ -26,7 +34,7 @@ function App() {
       <Poster></Poster>
       <div id='main-wrap'>
         <DaycareInfo></DaycareInfo>
-        <NewDogs></NewDogs>
+        <NewDogs dogs={dogs} ></NewDogs>
       </div>
 
       
