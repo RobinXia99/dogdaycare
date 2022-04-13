@@ -7,6 +7,8 @@ import DaycareInfo from './components/welcome/aboutus';
 import NewDogs from './components/welcome/newdogs';
 import Poster from './components/welcome/poster';
 import { fetchData, getDogs } from './models/storagemodel';
+import Welcome from './components/welcome/welcome';
+import SearchHeader from './components/dog-registry/searchheader';
 
 function App() {
 
@@ -22,7 +24,7 @@ function App() {
   },[]);
 
   useEffect(() => {
-    
+
   },[dogs])
 
 
@@ -31,11 +33,17 @@ function App() {
     <div className="App">
       <NavigationBar></NavigationBar>
 
-      <Poster></Poster>
-      <div id='main-wrap'>
-        <DaycareInfo></DaycareInfo>
-        <NewDogs dogs={dogs} ></NewDogs>
-      </div>
+      <Routes>
+          <Route exact path="/" element={
+            <Welcome dogs={dogs} />
+          } />
+
+          <Route exact path ="/search" element={
+            <SearchHeader/>
+          } />
+        </Routes>
+
+      
 
       
     </div>
