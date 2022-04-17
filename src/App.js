@@ -8,7 +8,8 @@ import NewDogs from './components/welcome/newdogs';
 import Poster from './components/welcome/poster';
 import { fetchData, getDogs } from './models/storagemodel';
 import Welcome from './components/welcome/welcome';
-import SearchHeader from './components/dog-registry/searchheader';
+import Search from './components/dog-registry/search';
+import DogInfo from './components/dog-registry/doginfo';
 
 function App() {
 
@@ -39,7 +40,11 @@ function App() {
           } />
 
           <Route exact path ="/search" element={
-            <SearchHeader/>
+            <Search></Search>
+          } />
+          
+          <Route exact path ="/dogs/:chipid" element={
+            <DogInfo></DogInfo>
           } />
         </Routes>
 
