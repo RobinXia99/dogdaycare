@@ -9,15 +9,13 @@ import { useNavigate } from "react-router-dom";
 
 
 
-const Search = () => {
+const Search = ({device}) => {
 
     const [selection, setSelection] = useState('Owner');
     const [input, setInput] = useState('');
 
     const [dogs, setDogs] = useState([]);
-
-
-
+    
     useEffect(() => {
         setDogs(getDogs);
     }, [])
@@ -31,10 +29,8 @@ const Search = () => {
         setSelection(event.target.value);
     }
 
-    return (
-        <div>
-            <div className="search_header">
-            <h2>Registered Owners & Dogs</h2>
+    const SearchBox = () => {
+        return (
             <div className="searchbox_container">
                 <select onChange={handleSelectChange}>
                     <option value={'Owner'}>Owner</option>
@@ -50,8 +46,24 @@ const Search = () => {
                     <aside> <FontAwesomeIcon className="fa_icon_search" icon={faMagnifyingGlass}/> </aside>
                 </div>
             </div>
+        )
+    };
+
+    return (device == 'web') ?
+    (
+        <div>
+            <div className="search_header">
+            <h2>Registered Owners & Dogs</h2>
+            <SearchBox></SearchBox>
         </div>
         <SearchResults inputText={input} selectedTag={selection} dogs={dogs}></SearchResults>
+        </div>
+    )
+    :
+    (
+        <div style={{marginTop: '50px'}}>
+            <SearchBox></SearchBox>
+            <SearchResults inputText={input} selectedTag={selection} dogs={dogs}></SearchResults>
         </div>
     )
 }

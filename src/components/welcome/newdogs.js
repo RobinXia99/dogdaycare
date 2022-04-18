@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { parsePath, useParams } from "react-router-dom";
+import React, { Fragment, useEffect, useState } from "react";
+import { parsePath, useNavigate, useParams } from "react-router-dom";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import '../../styles/welcome.css';
@@ -17,8 +17,6 @@ import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 const NewDogs = () => {
 
-
-    let { chipNr } = useParams();
 
     const [my_swiper, set_my_swiper] = useState({});
 
@@ -89,20 +87,21 @@ const NewDogs = () => {
 
 const DogSlide = ({dog}) => {
 
-
+    let navigate = useNavigate();
 
     return (
 
-        <div className="dog_image_outer_holder">
-            <div className="dog_image_holder">
-            <h3 className="woof">WOOF</h3>
-
-            <img className="dog_image" src={dog.img}/>
-
-            <DogTags dog={dog}></DogTags>
-
+        <Fragment>
+            <div className="dog_image_outer_holder" onClick={() => navigate('/dogs/' + (dog.chipNumber))}>
+                <div className="dog_image_holder">
+                    <h3 className="woof">WOOF</h3>
+                    <img className="dog_image" src={dog.img}/>
+                    
+                </div>
             </div>
-        </div>
+            <DogTags dog={dog}></DogTags>
+        </Fragment>
+        
         
     )
 
