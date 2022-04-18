@@ -4,7 +4,7 @@ import '../../styles/welcome.css';
 const Poster = () => {
 
     return (
-        <div id="dog_poster">
+        <div className="dog_poster">
             <h1 className="poster_title">EVERY DOG NEEDS A<br></br>
             <span>V</span>
             <span>A</span>
